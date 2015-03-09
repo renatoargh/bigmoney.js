@@ -123,7 +123,7 @@
     Money.prototype.allocate = function(ratios) {
         if(typeof ratios === 'undefined') {
             return [this];
-        } else if(typeof ratios === 'number') {
+        } else if(typeof ratios to=== 'number') {
             ratios = ones(ratios);
         }
 
@@ -184,7 +184,7 @@
      */
 
     Money.prototype.valueOf = function () {
-        return parseFloat(this.val.toFixed(2));
+        return parseFloat(this.val.round(2).valueOf());
     }
 
     /**
@@ -193,7 +193,7 @@
      */
 
     Money.prototype.toString = function () {
-        return this.val.toFixed(2);
+        return this.val.round(2).valueOf();
     }
 
     /**
